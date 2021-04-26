@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign in</title>
+  <style>
+
+body {
+        background: linear-gradient(to right, rgb(110, 235, 183) , rgb(126, 218, 235)) ;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 550px;
+        float: left;
+        margin: 7em auto;
+        margin-left: 100px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+
+    .main2 {
+        background-color: #FFFFFF;
+        width: 700px;
+        height: 550px;
+        float: right;
+        margin: 7em auto;
+        margin-right: 100px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        overflow-y: scroll;
+    }
+
+    .main3 {
+        background-color: transparent;
+        width: auto;
+        height: auto;
+        float: left;
+        margin: 7em auto;
+    }
+    
+    .main4 {
+        background: linear-gradient(to right, rgba(145, 205, 233, 0.911), rgba(48, 126, 161, 0.911));
+        width: 550px;
+        height: 200px;
+        float: center;
+        margin: 3em auto;
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 0 20px 1px rgba(71, 112, 246, 0.287);
+        border-radius: 50px;
+    }
+
+    .sign {
+        padding-top: 40px;
+        color: #8C55AA;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        text-decoration: none
+    }
+    
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }}
+  </style>
+  
+</head>
+
+<body>
+  
+    <div class="main">
+      <p class="sign" align="center">Busqueda de Usuario</p>
+      <form action="/search_done" method="POST">
+        <input name='username' class="un" type="text" align="center" placeholder="Nombre" />
+        <select class='un' align='center' name="departamento">
+          <option value='1' selected>Departamentos</option>
+          <optgroup label="Departamentos">
+            <option>Departamento Anatomía y Embriología Humana</option>
+            <option>Departamento Biología</option>
+            <option>Departamento Biomedicina, Biotecnología y Salud Pública</option>
+            <option>Departamento Ciencias de la Tierra</option>
+            <option>Departamento Ciencias de los Materiales e Ingeniería Metalúrgica y Química</option>
+            <option>Departamento de Ciencias y Técnicas de la Navegación y Construcciones Navales</option>
+            <option>Departamento Cirugía</option>
+            <option>Departamento Derecho del Trabajo y de la Seguridad Social</option>
+            <option>Departamento Derecho Internacional Publico, Penal y Procesal</option>
+            <option>Departamento Derecho Mercantil</option>
+            <option>Departamento Derecho Privado</option>
+            <option>Departamento Derecho Público</option>
+            <option>Departamento Didáctica</option>
+            <option>Departamento Disciplinas Jurídicas Básicas</option>
+            <option>Departamento Economía Financiera y Contabilidad</option>
+            <option>Departamento Economía General</option>
+            <option>Departamento Enfermería y Fisioterapia</option>
+            <option>Departamento Estadística e Investigación Operativa</option>
+            <option>Departamento Filología</option>
+            <option>Departamento Física Aplicada</option>
+            <option>Departamento Historia, Geografía y Filosofia</option>
+            <option>Departamento Ingenieria Electrica</option>
+            <option>Departamento Ingenieria Industrial e Ingenieria Civil</option>
+            <option>Departamento Ingenieria Informatica</option>
+            <option>Departamento Ingenieria Mecanica y Diseño Industrial</option>
+            <option>Departamento Máquinas y Motores Térmicos</option>
+            <option>Departamento Marketing y Comunicación</option>
+            <option>Departamento Matemáticas</option>
+            <option>Departamento Medicina</option>
+            <option>Departamento Neurociencias</option>
+            <option>Departamento Organización de Empresas</option>
+            <option>Departamento Psicología</option>
+            <option>Departamento Química Analítica</option>
+            <option>Departamento Tecnologías del Medio Ambiente</option>
+          </optgroup>
+        </select>
+        <select class='un' align='center' name="categoria">
+          <option value='1' selected>Categorias</option>
+          <optgroup label="Categoria">
+            <option>PAS</option>
+            <option>PDI</option>
+            <option>BEC</option>
+          </optgroup>
+        </select>        
+        <input class="submit"value="Buscar" align="center" type="submit" />   
+      </form>
+    </div>
+     
+      
+      <div class="main3" >
+        <form method="GET" action="/login">
+          <input class="submit" value="Identificate" align="center" type="submit"/>
+        </form>
+        <br>
+        <br>
+        <form method="GET" action="/register">
+          <input class="submit" value="Registrate" align="center" type="submit"/>
+        </form>
+        %if admin == 1:
+          <br>
+          <br>
+          <form method="GET" action="/modify">
+            <input class="submit" value="Administrar Datos" align="center" type="submit"/>
+          </form>
+        %end
+      </div>
+
+    % if count == 1:
+      <div class="main2" >
+        <p class="sign" align="center">Resultado</p>
+      %for item in resultado:  
+        <div class="main4" >
+          <br>
+          <p> Nombre : {{ item[0] }}</p>
+          <p> Categoria : {{ item[1] }}</p>
+          <p> Departamento : {{ item[2] }}</p>
+          <p> Correo : {{ item[3] }}</p>
+        </div>
+      %end
+      </div>
+    %end
+
+    % if count == 2:
+      <div class="main3">
+        <p> {{ usuario }}</p>
+      </div>
+
+      
+</body>
+
+</html>
