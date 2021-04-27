@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <title>Sign in</title>
+  <title>Login</title>
   <style>
 
 body {
-        background-color: #F3EBF6;
+        background: linear-gradient(to right, rgb(110, 235, 183) , rgb(126, 218, 235)) ;
         font-family: 'Ubuntu', sans-serif;
     }
     
@@ -120,6 +120,11 @@ body {
 </head>
 
 <body>
+
+  %if error != '':
+    <p>Erorr al Introducir los datos</p>
+  %end
+  
   %if count == 0:
     <div class="main">
       <p class="sign" align="center">Identificate</p>
@@ -132,7 +137,7 @@ body {
   %else:
     <div class="main">
       <p class="sign" align="center">Login Exitoso</p>
-      <form action="/identificado" method="GET">
+      <form action="/" method="GET">
         <br>
         <input class="submit" value="Inicio" align="center" type="submit" />     
       </div>

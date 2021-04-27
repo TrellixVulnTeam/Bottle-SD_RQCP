@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <title>Sign in</title>
+  <title>Pagina de Busqueda</title>
   <style>
 
 body {
@@ -60,6 +60,22 @@ body {
         font-size: 16px;
         box-shadow: 0 0 20px 1px rgba(71, 112, 246, 0.287);
         border-radius: 50px;
+    }
+
+    .main5 {
+        background: linear-gradient(to right, rgba(145, 205, 233, 0.911), rgba(48, 126, 161, 0.911));
+        width: 300px;
+        height: 50px;
+        float: center;
+        margin: 7em auto;
+        font-size: 16px;
+        box-shadow: 0 0 20px 1px rgba(71, 112, 246, 0.287);
+        border-radius: 50px;
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
 
     .sign {
@@ -165,12 +181,12 @@ body {
         <select class='un' align='center' name="departamento">
           <option value='1' selected>Departamentos</option>
           <optgroup label="Departamentos">
-            <option>Departamento Anatomía y Embriología Humana</option>
-            <option>Departamento Biología</option>
-            <option>Departamento Biomedicina, Biotecnología y Salud Pública</option>
+            <option>Departamento Anatomia y Embriologia Humana</option>
+            <option>Departamento Biologia</option>
+            <option>Departamento Biomedicina, Biotecnologia y Salud Publica</option>
             <option>Departamento Ciencias de la Tierra</option>
-            <option>Departamento Ciencias de los Materiales e Ingeniería Metalúrgica y Química</option>
-            <option>Departamento de Ciencias y Técnicas de la Navegación y Construcciones Navales</option>
+            <option>Departamento Ciencias de los Materiales e Ingeniería Metalurgica y Quimica</option>
+            <option>Departamento de Ciencias y Tecnicas de la Navegacion y Construcciones Navales</option>
             <option>Departamento Cirugía</option>
             <option>Departamento Derecho del Trabajo y de la Seguridad Social</option>
             <option>Departamento Derecho Internacional Publico, Penal y Procesal</option>
@@ -223,13 +239,6 @@ body {
         <form method="GET" action="/register">
           <input class="submit" value="Registrate" align="center" type="submit"/>
         </form>
-        %if admin == 1:
-          <br>
-          <br>
-          <form method="GET" action="/modify">
-            <input class="submit" value="Administrar Datos" align="center" type="submit"/>
-          </form>
-        %end
       </div>
 
     % if count == 1:
@@ -247,11 +256,16 @@ body {
       </div>
     %end
 
-    % if count == 2:
-      <div class="main3">
-        <p> {{ usuario }}</p>
+    % if admin == 1:
+      <div class="main5">
+        <p> Usuario: {{user[0] }}</p>
       </div>
-
+    % else:
+      <div class="main5">
+        <p> Usuario: {{ user[0] }}</p>
+      </div>
+    %end
+    
       
 </body>
 
