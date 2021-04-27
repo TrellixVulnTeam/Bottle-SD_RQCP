@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modulo Run &mdash; documentación de BottlePy - SD - Release 1.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de BottlePy - SD - Release 1.0" href="../index.html"/>
+        <link rel="next" title="Modulo RunSql" href="runsql.html"/>
+        <link rel="prev" title="Autores" href="autores.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> BottlePy - SD
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Indice:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modulo Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="runsql.html">Modulo RunSql</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BottlePy - SD</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Modulo Run</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/documentos/run.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-run">
+<span id="modulo-run"></span><h1>Modulo Run<a class="headerlink" href="#module-run" title="Enlazar permanentemente con este título">¶</a></h1>
+<dl class="py function">
+<dt id="run.do_login">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">do_login</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#do_login"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.do_login" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que interpreta el resultado del formulario login y realiza una serie de acciones
+dependiendo de los campos introducidos durante el login. Devuelve tambien parte de
+la información relativa al usuario introducido</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>password</strong> – Cadena con la contraseña introducida en el formulario</p></li>
+<li><p><strong>correo</strong> – Cadena con el correo introducido en el formulario</p></li>
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – Query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>count</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+<dt class="field-even">Global USER_INFO</dt>
+<dd class="field-even"><p>Lista global que almacena la información relativa a un usuario tras su logeo.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.do_register">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">do_register</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#do_register"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.do_register" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que interpreta el resultado del formulario registro y realiza una serie de acciones
+dependiendo de los campos introducidos durante el registro</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Cadena con el nombre introducido en el formulario</p></li>
+<li><p><strong>password</strong> – Cadena con la contraseña introducida en el formulario</p></li>
+<li><p><strong>correo</strong> – Cadena con el correo introducido en el formulario</p></li>
+<li><p><strong>dni</strong> – Cadena con el dni introducido en el formulario</p></li>
+<li><p><strong>departamento</strong> – Cadena con el departamento introducido en el formulario</p></li>
+<li><p><strong>categoria</strong> – Cadena con la categoria introducida en el formulario</p></li>
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>command</strong> – Comando que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>count</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.index">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">index</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#index"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.index" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que interpreta la pagina principal con algunas opciones modificables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> – Selector de modos para el template index</p></li>
+<li><p><strong>admin</strong> – Selector de modo admin para el template index</p></li>
+<li><p><strong>user</strong> – Información relativa al usuario que proviene del login</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.login">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">login</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#login"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.login" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que nos lleva por primera vez al login</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>count</strong> – Selector de modos para el template login.</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido durante el login</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.register">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">register</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#register"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.register" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que muestra el formulario del cuestionario</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><p><strong>count</strong> – Selector de modos para el template register</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.search_done">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">search_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#search_done"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.search_done" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que interpreta el resultado del formulario de búsqueda y realiza una serie de acciones
+dependiendo de los campos introducidos durante la búsqueda.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – Cadena con el nombre introducido en el formulario</p></li>
+<li><p><strong>departamento</strong> – Cadena con el departamento introducido en el formulario</p></li>
+<li><p><strong>name</strong> – categoria
+Cadena con la categoria introducida en el formulario</p></li>
+<li><p><strong>name</strong> – conn
+Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>name</strong> – c
+Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>count</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="runsql.html" class="btn btn-neutral float-right" title="Modulo RunSql" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="autores.html" class="btn btn-neutral" title="Autores" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Alvaro Orellana Serrano y Zuleima Muñoz Jimenez.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'Release 1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

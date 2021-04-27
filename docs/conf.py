@@ -23,7 +23,7 @@ sys.path.append('/documentos')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Alvaro Projects'
+project = 'BottlePy - SD'
 copyright = '2021, Alvaro Orellana Serrano y Zuleima Muñoz Jimenez'
 author = 'Alvaro Orellana Serrano y Zuleima Muñoz Jimenez'
 
