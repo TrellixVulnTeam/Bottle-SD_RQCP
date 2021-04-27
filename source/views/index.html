@@ -239,9 +239,22 @@ body {
         <form method="GET" action="/register">
           <input class="submit" value="Registrate" align="center" type="submit"/>
         </form>
-      </div>
 
-    % if count == 1:
+        %if admin == 1:
+          <br>
+          <br>
+          <form method="GET" action="/">
+            <input class="submit" value="Modificación Usuarios" align="center" type="submit"/>
+          </form>
+          <br>
+          <br>
+          <form method="GET" action="/">
+            <input class="submit" value="Modificación Usuarios" align="center" type="submit"/>
+          </form>
+          %end
+        </div>
+
+    %if count == 1:
       <div class="main2" >
         <p class="sign" align="center">Resultado</p>
       %for item in resultado:  

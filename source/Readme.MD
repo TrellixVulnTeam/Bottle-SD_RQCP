@@ -2,9 +2,7 @@
     - [x] Bases de Datos con Info   (Hacer Tabla)
     - [x] Busqueda por:
         - [x] Nombre
-        - [x] DNI
-        - [x]  Correo Electronico
-        - [x]  Departamento
+        - [x] Departamento
         - [x] Categoria
         - [ ] Lista de Asignaturas
 
