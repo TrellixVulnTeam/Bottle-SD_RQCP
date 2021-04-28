@@ -225,6 +225,15 @@ body {
             <option>BEC</option>
           </optgroup>
         </select>
+
+        <select class='un' align='center' name="asignatura">
+          <option value='1' selected>Asignaturas</option>
+          <optgroup label="Asignaturas">
+            %for i in asignatura:
+            <option>{{ i[0] }}</option>
+            %end
+          </optgroup>
+        </select>
         <input name='dni' class="un" type="text" align="center" placeholder="DNI" />        
         <input class="submit"value="Buscar" align="center" type="submit" />   
       </form>

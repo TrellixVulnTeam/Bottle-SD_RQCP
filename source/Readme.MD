@@ -1,12 +1,12 @@
-- [ ] BACKEND
+- [x] BACKEND
     - [x] Bases de Datos con Info   
     - [x] Busqueda por:
         - [x] Nombre
         - [x] Departamento
         - [x] Categoria
-        - [ ] Lista de Asignaturas
+        - [x] Lista de Asignaturas
 
-- [ ] CLIENTE INTERFAZ 
+- [x] CLIENTE INTERFAZ 
     - [x] Dar de alta miembro   (POST)
     - [x] Modificar datos miembro (POST)
     - [x] Consultar Miembros    (POST)
@@ -14,8 +14,8 @@
     - [x] Buscar por DNI (POST)
 
 - [ ] MEJORAS
-    - [ ] endpoints
-        - [ ] eliminar_miembro
+    - [ ] Endpoints
+        - [x] eliminar_miembro
         - [x] busqueda_parcial_nombre
         - [x] busqueda_paramterica
         - [ ] busqueda_inversa_asignaturas
