@@ -37,7 +37,9 @@ El servicio web deberá contar, al menos, con los siguientes **endpoints**:
    :maxdepth: 2
    :caption: Indice:
 
+   documentos/instalacion
    documentos/autores
    documentos/run
    documentos/runsql
+   
    
