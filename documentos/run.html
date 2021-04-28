@@ -83,6 +83,7 @@
             
                 <p class="caption"><span class="caption-text">Indice:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Modulo Run</a></li>
 <li class="toctree-l1"><a class="reference internal" href="runsql.html">Modulo RunSql</a></li>
@@ -202,6 +203,45 @@ dependiendo de los campos introducidos durante el registro</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="run.eliminate">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">eliminate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#eliminate"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.eliminate" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que solo se activa si eres admin y que sirve para eliminar a un usuario, incluido el propio admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – Query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>cont</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.eliminate_done">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">eliminate_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#eliminate_done"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.eliminate_done" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que aparece tras realizar la eliminación de algun usuario por parte del administrador,
+se encarga de manejar toda la información relativa al formulario mandado a la hora de
+eliminar a cualquier usuario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Nombre del usuario que queremos borrar.</p></li>
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – Query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>cont</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="run.index">
 <code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">index</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#index"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.index" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Ruta que interpreta la pagina principal con algunas opciones modificables</p>
@@ -225,6 +265,51 @@ dependiendo de los campos introducidos durante el registro</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>count</strong> – Selector de modos para el template login.</p></li>
 <li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido durante el login</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.modify">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">modify</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#modify"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.modify" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que solo se activa si eres admin y que sirve para modificar la información, excepto
+el nombre, de cualquier usuario, incluido el propio admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – Query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>count</strong> – Selector de modos para el template register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.modify_done">
+<code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">modify_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#modify_done"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.modify_done" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ruta que aparece tras realizar la modificación de algun usuario por parte del administrador,
+se encarga de manejar toda la información relativa al formulario rellenado a la hora
+de modificar la información de cualquier usuario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Cadena con el nombre introducido en el formulario</p></li>
+<li><p><strong>password</strong> – Cadena con la contraseña introducida en el formulario</p></li>
+<li><p><strong>correo</strong> – Cadena con el correo introducido en el formulario</p></li>
+<li><p><strong>dni</strong> – Cadena con el dni introducido en el formulario</p></li>
+<li><p><strong>departamento</strong> – Cadena con el departamento introducido en el formulario</p></li>
+<li><p><strong>categoria</strong> – Cadena con la categoria introducida en el formulario</p></li>
+<li><p><strong>conn</strong> – Objeto sql para realizar las conexiones a la base de datos estipulada</p></li>
+<li><p><strong>c</strong> – Cursos de la conexión sql</p></li>
+<li><p><strong>query</strong> – Query que se encarga de realizar la operacion adecuada para la consulta sql</p></li>
+<li><p><strong>result</strong> – Resultado de la consulta sql</p></li>
+<li><p><strong>error</strong> – Cadena con el contenido del error que se ha producido</p></li>
+<li><p><strong>cont</strong> – Selector de modos para el template register</p></li>
 </ul>
 </dd>
 </dl>
