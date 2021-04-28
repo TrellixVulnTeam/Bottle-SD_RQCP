@@ -60,6 +60,7 @@ def search_done():
         username = request.forms.get('username')
         departamento = request.forms.get('departamento')
         categoria = request.forms.get('categoria')
+        dni = request.forms.get('dni')
 
         conn = sqlite3.connect('bottle.db')
         c = conn.cursor()
@@ -68,7 +69,10 @@ def search_done():
 
         if (username != ''):
             query = query + " and nombre like '%{}%' ".format(username)
-
+       
+        if (dni != ''):
+            query = query + " and dni like '{}' ".format(dni)
+        
         if (categoria != '1'):
             query = query + " and categoria = '{}' ".format(categoria)
 
@@ -237,20 +241,22 @@ def do_register():
     """
 
     try:
-            name = request.forms.get('name')
-            password = request.forms.get('password')
-            correo = request.forms.get('mail')
-            dni = request.forms.get('dni')
-            departamento = request.forms.get('departamento')
-            categoria = request.forms.get('categoria')
+        name = request.forms.get('name')
+        password = request.forms.get('password')
+        correo = request.forms.get('mail')
+        dni = request.forms.get('dni')
+        departamento = request.forms.get('departamento')
+        categoria = request.forms.get('categoria')
 
-            conn = sqlite3.connect('bottle.db')
-            c = conn.cursor()
-            command = "INSERT INTO usuarios (nombre,dni,correo,departamento,categoria,pass) VALUES ('{}' , '{}' , '{}' , '{}' , '{}' , '{}');".format(
-                name, dni, correo, departamento, categoria, password)
-            c.execute(command)
-            conn.commit()
-            c.close()
+        conn = sqlite3.connect('bottle.db')
+        c = conn.cursor()
+        command = "INSERT INTO usuarios (nombre,dni,correo,departamento,categoria,pass) VALUES ('{}' , '{}' , '{}' , '{}' , '{}' , '{}');".format(
+            name, dni, correo, departamento, categoria, password)
+        c.execute(command)
+        conn.commit()
+        c.close()
+
+        # Verificar de datos correctos en el registro.
 
     except sqlite3.Error as error:
             print("Error mientras se insertaban los datos",error)
@@ -263,7 +269,119 @@ def do_register():
     return template('register', count = 1)
 
 
+@route('/modify')
+def modify():
 
+    try:
+
+
+        conn = sqlite3.connect('bottle.db')
+        c = conn.cursor()
+        
+        query = "SELECT nombre,dni FROM usuarios WHERE 1=1;"
+
+        print('\n'+query+'\n')
+        
+        c.execute(query)
+        result = c.fetchall()
+        c.close()
+
+    except sqlite3.Error as error:
+        print("Error mientras se extraían los datos",error)
+
+    finally:
+        if (conn):
+            conn.close()
+            print("Conexion Cerrada")
+
+    return template('modify', cont = 0 , consulta = result)
+
+@route('/modify_done', method = 'POST')
+def modify_done():
+
+    try:
+        name = request.forms.get('name')
+        password = request.forms.get('password')
+        correo = request.forms.get('mail')
+        dni = request.forms.get('dni')
+        departamento = request.forms.get('departamento')
+        categoria = request.forms.get('categoria')
+
+        conn = sqlite3.connect('bottle.db')
+        c = conn.cursor()
+
+        query = "UPDATE usuarios SET dni='{}' , correo='{}' , departamento='{}' , categoria='{}' , pass='{}' WHERE nombre='{}';".format(
+            dni,correo,departamento,categoria,password,name)
+    
+        print(query)
+        c.execute(query)
+        conn.commit()
+        c.close()
+
+    except sqlite3.Error as error:
+        print("Error mientras se extraían los datos",error)
+
+    finally:
+        if (conn):
+            conn.close()
+            print("Conexion Cerrada")
+
+    return template('modify', cont = 1)
+
+@route('/eliminate')
+def eliminate():
+
+    try:
+
+
+        conn = sqlite3.connect('bottle.db')
+        c = conn.cursor()
+        
+        query = "SELECT nombre FROM usuarios WHERE 1=1;"
+
+        print('\n'+query+'\n')
+        
+        c.execute(query)
+        result = c.fetchall()
+        c.close()
+
+    except sqlite3.Error as error:
+        print("Error mientras se extraían los datos",error)
+
+    finally:
+        if (conn):
+            conn.close()
+            print("Conexion Cerrada")
+
+    return template('eliminate', cont = 0 , consulta = result)
+
+
+@route('/eliminate_done', method='POST')
+def eliminate_done():
+
+    try:
+        name = request.forms.get('name')
+
+        conn = sqlite3.connect('bottle.db')
+        c = conn.cursor()
+
+        query = "DELETE from usuarios where nombre='{}';".format(name)
+
+        print('\n'+query+'\n')
+
+        c.execute(query)
+        conn.commit()
+        c.close()
+
+    except sqlite3.Error as error:
+        print("Error mientras se extraian los datos", error)
+
+    finally:
+        if (conn):
+            conn.close()
+            print("Conexion Cerrada")
+
+    return template('eliminate', cont = 1)
 # INICIALIZACIÓN DE EL SERVIDOR
 
 

@@ -1,5 +1,5 @@
 - [ ] BACKEND
-    - [x] Bases de Datos con Info   (Hacer Tabla)
+    - [x] Bases de Datos con Info   
     - [x] Busqueda por:
         - [x] Nombre
         - [x] Departamento
@@ -7,12 +7,11 @@
         - [ ] Lista de Asignaturas
 
 - [ ] CLIENTE INTERFAZ 
-    - [x] Dar de alta miembro
-    - [ ] Modificar datos miembro        (Supongo que admin)
-    - [x] consultar_miembros
-    - [x] consultar_miembros_categoria
-    - [x] buscar_por_dni
-    - [ ] error por endpoint no encontrado
+    - [x] Dar de alta miembro   (POST)
+    - [x] Modificar datos miembro (POST)
+    - [x] Consultar Miembros    (POST)
+    - [x] Consultar Miembros Categoria (POST)
+    - [x] Buscar por DNI (POST)
 
 - [ ] MEJORAS
     - [ ] endpoints
@@ -20,3 +19,4 @@
         - [x] busqueda_parcial_nombre
         - [x] busqueda_paramterica
         - [ ] busqueda_inversa_asignaturas
+        - [ ] Verificacion de datos correctos en el registro.

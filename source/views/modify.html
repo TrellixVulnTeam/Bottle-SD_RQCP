@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Panel de Control</title>
+
+<style>
+body {
+        background: linear-gradient(to right, rgb(110, 235, 183) , rgb(126, 218, 235)) ;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 700px;
+        float: left;
+        margin: 7em auto;
+        margin-left: 100px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+
+    .main2 {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        float: left;
+        margin: 10em auto;
+        margin-left: 100px;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: #8C55AA;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        text-decoration: none
+    }
+    
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }}
+
+</style>
+
+</head>
+
+<body>
+    % if cont == 0:
+      <div class="main">
+        <p class="sign" align="center">Modificar Usuario</p>
+        <form action="/modify_done" method="POST">
+            <select class='un' align='center' name="name">
+                <optgroup label="Usuarios">
+                    % for i in consulta:
+                        <option> {{ i[0] }} </option>
+                    % end
+                </optgroup>
+            </select>
+          <input name='password' class="pass" type="password" align="center" placeholder="Contraseña">
+          <input name='dni' class="un" type="text" align="center" placeholder="Dni">
+          <input name='mail' class="un" type="text" align="center" placeholder="Correo Electronico">
+          <select class='un' align='center' name="departamento">
+            <option selected>Seleccionar Departamento</option>
+            <optgroup label="Departamentos">
+              <option>Departamento Anatomia y Embriologia Humana</option>
+              <option>Departamento Biologia</option>
+              <option>Departamento Biomedicina, Biotecnologia y Salud Publica</option>
+              <option>Departamento Ciencias de la Tierra</option>
+              <option>Departamento Ciencias de los Materiales e Ingenieria Metalurgica y Quimica</option>
+              <option>Departamento de Ciencias y Tecnicas de la Navegacion y Construcciones Navales</option>
+              <option>Departamento Cirugia</option>
+              <option>Departamento Derecho del Trabajo y de la Seguridad Social</option>
+              <option>Departamento Derecho Internacional Publico, Penal y Procesal</option>
+              <option>Departamento Derecho Mercantil</option>
+              <option>Departamento Derecho Privado</option>
+              <option>Departamento Derecho Publico</option>
+              <option>Departamento Didactica</option>
+              <option>Departamento Disciplinas Juridicas Basicas</option>
+              <option>Departamento Economia Financiera y Contabilidad</option>
+              <option>Departamento Economia General</option>
+              <option>Departamento Enfermeria y Fisioterapia</option>
+              <option>Departamento Estadistica e Investigacion Operativa</option>
+              <option>Departamento Filologia</option>
+              <option>Departamento Física Aplicada</option>
+              <option>Departamento Historia, Geografia y Filosofia</option>
+              <option>Departamento Ingenieria Electrica</option>
+              <option>Departamento Ingenieria Industrial e Ingenieria Civil</option>
+              <option>Departamento Ingenieria Informatica</option>
+              <option>Departamento Ingenieria Mecanica y Diseño Industrial</option>
+              <option>Departamento Maquinas y Motores Termicos</option>
+              <option>Departamento Marketing y Comunicacion</option>
+              <option>Departamento Matematicas</option>
+              <option>Departamento Medicina</option>
+              <option>Departamento Neurociencias</option>
+              <option>Departamento Organizacion de Empresas</option>
+              <option>Departamento Psicología</option>
+              <option>Departamento Quimica Analítica</option>
+              <option>Departamento Tecnologias del Medio Ambiente</option>
+            </optgroup>
+          </select>
+          <select class='un' align='center' name="categoria">
+            <option selected>Seleccionar Categoria</option>
+            <optgroup label="Categoria">
+              <option>PAS</option>
+              <option>PDI</option>
+              <option>BEC</option>
+            </optgroup>
+          </select>
+          <br>        
+          <input class="submit"value="Modificar" align="center" type="submit" />   
+        </div>
+    %else:
+      <div class="main">
+        <p class="sign" align="center">Modificacion Exitosa</p>
+        <form action="/">
+          <br>
+          <input class="submit" value="Inicio" align="center" type="submit" />     
+        </div>
+    %end
+  </body>
+
+</html>
