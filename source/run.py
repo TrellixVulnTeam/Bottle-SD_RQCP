@@ -152,16 +152,14 @@ def do_login():
 
         conn = sqlite3.connect('bottle.db')
         c = conn.cursor()
-        query = "SELECT nombre,correo,pass FROM usuarios WHERE 1=1"
 
-        if (correo != 'None'):
-            query = query + " and correo = '{}' ".format(correo)    
+        if (correo != 'None' and password != ''):
+            query = "SELECT nombre,correo,pass FROM usuarios WHERE 1=1 and correo='{}' and pass = '{}';".format(correo,password)
+            print('\n'+query+'\n')
+        
+        else:
+            return template('login', count = 0, error = 'Error al introducir los datos')
 
-        if (password != ''):
-            query = query + " and pass = '{}' ".format(password)
-
-        query = query + ";"
-        print('\n'+query+'\n')
         c.execute(query)
         result = c.fetchall()
         c.close()
@@ -181,6 +179,7 @@ def do_login():
 
     except sqlite3.Error as error:
         print("Error en la consulta",error)
+        return template('login', count = 0, error = 'Error al introducir los datos')
 
     except IndexError:
         return template('login', count = 0, error = 'Error al Introducir los datos')
@@ -204,7 +203,7 @@ def register():
                 Selector de modos para el template register
     
     """
-    return template('register', count = 0)
+    return template('register', count = 0, error = '')
 
 @route('/register_done', method='POST')
 def do_register():
@@ -239,8 +238,8 @@ def do_register():
                 Selector de modos para el template register
 
     """
-
     try:
+    
         name = request.forms.get('name')
         password = request.forms.get('password')
         correo = request.forms.get('mail')
@@ -250,13 +249,18 @@ def do_register():
 
         conn = sqlite3.connect('bottle.db')
         c = conn.cursor()
-        command = "INSERT INTO usuarios (nombre,dni,correo,departamento,categoria,pass) VALUES ('{}' , '{}' , '{}' , '{}' , '{}' , '{}');".format(
-            name, dni, correo, departamento, categoria, password)
+
+        if (name != '' and dni != '' and correo != '' and password != '' and categoria != '1' and departamento != '1'):
+
+            command = "INSERT INTO usuarios (nombre,dni,correo,departamento,categoria,pass) VALUES ('{}' , '{}' , '{}' , '{}' , '{}' , '{}');".format(
+                name, dni, correo, departamento, categoria, password)
+
+        else:
+            return template('register', count = 0 , error = 'Falta algun campo')
+        
         c.execute(command)
         conn.commit()
         c.close()
-
-        # Verificar de datos correctos en el registro.
 
     except sqlite3.Error as error:
             print("Error mientras se insertaban los datos",error)
@@ -266,7 +270,7 @@ def do_register():
                 conn.close()
                 print("Conexion Cerrada")
     
-    return template('register', count = 1)
+    return template('register', count = 1, error = '')
 
 
 @route('/modify')

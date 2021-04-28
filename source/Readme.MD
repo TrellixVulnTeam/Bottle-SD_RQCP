@@ -19,4 +19,4 @@
         - [x] busqueda_parcial_nombre
         - [x] busqueda_paramterica
         - [ ] busqueda_inversa_asignaturas
-        - [ ] Verificacion de datos correctos en el registro.
+        - [x] Verificacion de datos correctos en el registro.

@@ -16,7 +16,7 @@ def databasecreate():
     print("Creando la base de datos");
 
     conn = sqlite3.connect('bottle.db')
-    conn.execute("CREATE TABLE usuarios (nombre char(50) PRIMARY KEY NOT NULL, dni char(10) NOT NULL, pass char(10) NOT NULL, correo char(60) NOT NULL, departamento char(100), categoria char(5))")
+    conn.execute("CREATE TABLE usuarios (nombre char(50) PRIMARY KEY NOT NULL, dni char(10) NOT NULL, pass char(20) NOT NULL, correo char(60) NOT NULL, departamento char(100), categoria char(5))")
     conn.execute("INSERT INTO usuarios (nombre, dni, correo, departamento, categoria, pass) VALUES ('admin','admin','admin@uca.es','Administracion','ADM', 'admin') ")
     conn.commit()
     conn.close()
