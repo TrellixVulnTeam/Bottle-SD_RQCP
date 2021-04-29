@@ -39,7 +39,6 @@ El servicio web deberá contar, al menos, con los siguientes **endpoints**:
 
    documentos/instalacion
    documentos/autores
-   documentos/run
-   documentos/runsql
+   documentos/codigo
    
    

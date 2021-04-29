@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Modulo Run &mdash; documentación de BottlePy - SD - Release 1.0</title>
+  <title>Documentación del Código &mdash; documentación de BottlePy - SD - Release 1.0</title>
   
 
   
@@ -34,7 +34,6 @@
               href="../genindex.html"/>
         <link rel="search" title="Búsqueda" href="../search.html"/>
     <link rel="top" title="documentación de BottlePy - SD - Release 1.0" href="../index.html"/>
-        <link rel="next" title="Modulo RunSql" href="runsql.html"/>
         <link rel="prev" title="Autores" href="autores.html"/> 
 
   
@@ -85,8 +84,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Modulo Run</a></li>
-<li class="toctree-l1"><a class="reference internal" href="runsql.html">Modulo RunSql</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentación del Código</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-runsql">Runsql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-run">Run</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -131,13 +133,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Modulo Run</li>
+      <li>Documentación del Código</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/documentos/run.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/documentos/codigo.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -150,8 +152,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-run">
-<span id="modulo-run"></span><h1>Modulo Run<a class="headerlink" href="#module-run" title="Enlazar permanentemente con este título">¶</a></h1>
+  <div class="section" id="documentacion-del-codigo">
+<h1>Documentación del Código<a class="headerlink" href="#documentacion-del-codigo" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="module-runsql">
+<span id="runsql"></span><h2>Runsql<a class="headerlink" href="#module-runsql" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="py function">
+<dt id="runsql.databasecreate">
+<code class="sig-prename descclassname"><span class="pre">runsql.</span></code><code class="sig-name descname"><span class="pre">databasecreate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/runsql.html#databasecreate"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#runsql.databasecreate" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Función que se encarga de crear en un primer lugar una base de datos para poder crear
+el esquema de las tablas en la APIRest. Esta se encarga simplemente de facilitar la
+creación de la Base de Datos <em>Padre</em> sobre la cual poder introducir más información</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param name</dt>
+<dd class="field-odd"><p>conn
+Objeto de sql que se encarga de realizar todas las operaciones con la Base de Datos sqlite3.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="module-run">
+<span id="run"></span><h2>Run<a class="headerlink" href="#module-run" title="Enlazar permanentemente con este título">¶</a></h2>
 <dl class="py function">
 <dt id="run.do_login">
 <code class="sig-prename descclassname"><span class="pre">run.</span></code><code class="sig-name descname"><span class="pre">do_login</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/run.html#do_login"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#run.do_login" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -352,6 +376,7 @@ Cursos de la conexión sql</p></li>
 </dd></dl>
 
 </div>
+</div>
 
 
            </div>
@@ -359,8 +384,6 @@ Cursos de la conexión sql</p></li>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="runsql.html" class="btn btn-neutral float-right" title="Modulo RunSql" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="autores.html" class="btn btn-neutral" title="Autores" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

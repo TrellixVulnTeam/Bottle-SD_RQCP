@@ -85,11 +85,18 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Instalación de Herramientas</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#github">GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacion">Instalación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#venv">Venv</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#add-ons">Add-Ons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base-de-datos">Base de Datos</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run.html">Modulo Run</a></li>
-<li class="toctree-l1"><a class="reference internal" href="runsql.html">Modulo RunSql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codigo.html">Documentación del Código</a></li>
 </ul>
 
             
@@ -168,10 +175,154 @@ entrar, acceder a través de este enlace: <a class="reference external" href="ht
 <li><p>source</p></li>
 </ul>
 </div></blockquote>
-<dl class="simple">
-<dt>Docs</dt><dd><p>Tiene todo</p>
+<dl>
+<dt>Docs</dt><dd><p>Tiene todo lo relacionado con la documentación del software, tanto la generación automatica de la documentación interna
+a través de la herramienta <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphynx</a>, que permite auto-generar código de Python siguiendo simplemente unos patrones de comentado
+de código, como la generación del HTML y Latex del resto de tipos de documentación.</p>
+<p>Dejando la documentación expuesta al público, se facilita para el próximo desarrollador de un proyecto abierto como este, la posibilidad
+de seguir contribuyendo, no solo con la parte del código, si también documentando todas las nuevas características que se va añadiendo a
+esta APIRest.</p>
+<p>Todo esto tiene una intención meramente expositiva, puesto que este proyecto dudo que se siga desarrollando.</p>
+</dd>
+<dt>Source</dt><dd><p>En el directorio source encontramos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Los templates HTML</p></li>
+<li><p>Base de Datos Sqlite3</p></li>
+<li><p>Archivo de configuración <strong>«requirements.txt»</strong></p></li>
+<li><p>Scripts <strong>Run.py</strong> y <strong>Runsql.py</strong></p></li>
+</ul>
+</div></blockquote>
 </dd>
 </dl>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Lo primero que realizaremos para manejar esta app será un <cite>git clone</cite></p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Mwazoski/Bottle-SD.git
+</pre></div>
+</div>
+<p>Una vez hallamos descargado el proyecto, entraremos dentro del directorio source, donde crearemos nuestro
+entorno virtual para poder, más tarde, realizar la instalación de todos los módulos necesarios para manejar
+tanto la documentación, como el código.</p>
+<p>Creación de un entorno Virtual <a class="reference internal" href="#venv">Venv</a></p>
+<hr class="docutils" />
+<p>Cuando hayamos creado el espacio virtual y estemos dentro de él, tendremos que instalar mediante la herramienta <strong>pip</strong>, todas las
+dependencias que esta APIRest requiere. Simplemento ejecutamos el comando</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Este cogerá del archivo <em>requirements.txt</em> todas las dependencias que se requieren, includas la especificación de sus versiones.</p>
+<p>Una vez hemos instalado todas las dependencias, estaremos listos para volver a la carpeta <strong>/source</strong> y poder lanzar el programa,
+esto lo realizaremos mediante la invocación del intérprete python.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ python run.py
+</pre></div>
+</div>
+<div class="section" id="venv">
+<h3>Venv<a class="headerlink" href="#venv" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Introducción</strong></p>
+<p>Un entorno virtual de Python es un ambiente creado con el objetivo de aislar recursos como librerías y entorno de ejecución,
+del sistema principal o de otros entornos virtuales. Lo anterior significa que en el mismo sistema, maquina o computadora,
+es posible tener instaladas multiples versiones de una misma librería sin crear ningún tipo de conflicto.</p>
+<p>Para poder utilizar este simple pero poderoso concepto es necesario instalar una utilidad que permita gestionar la creación
+y utilización de dichos entornos virtuales llamada venv.</p>
+<p>El módulo venv proporciona soporte para crear «entornos virtuales» ligeros con sus propios directorios de ubicación,
+aislados opcionalmente de los directorios de ubicación del sistema. Cada entorno virtual tiene su propio binario Python
+(que coincide con la versión del binario que se utilizó para crear este entorno) y puede tener su propio conjunto independiente
+de paquetes Python instalados en sus directorios de ubicación.</p>
+<p><strong>Como usar Venv</strong></p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="c1"># python3 venv carpeta_destino</span>
+
+$ python3 venv mientorno
+</pre></div>
+</div>
+<p>Una vez se ha creado el entorno virtual, debemos entrar en dicho entorno.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> mientorno/bin/activate
+</pre></div>
+</div>
+<p>Una vez ejecutado este comando, estaremos dentro del entorno virtual, sabremos esto ya que nuestra consola
+ahora aparecerá de la siguiente manera.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>mientorno<span class="o">)</span> user@user:~/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="add-ons">
+<h2>Add-Ons<a class="headerlink" href="#add-ons" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta APIRest desbloquea mucha de sus funciones, gracias al usuario administrador, el cual es capaz de realizar acciones
+adicionales, por defecto, el usuario adminisitrador:</p>
+<dl class="simple">
+<dt>Admin</dt><dd><ul class="simple">
+<li><p><strong>Usuario:</strong> admin</p></li>
+<li><p><strong>Correo Electrónico:</strong> <a class="reference external" href="mailto:admin&#37;&#52;&#48;uca&#46;es">admin<span>&#64;</span>uca<span>&#46;</span>es</a></p></li>
+<li><p><strong>Contraseña:</strong> admin</p></li>
+</ul>
+</dd>
+</dl>
+<p>Logeandonos con estas credenciales podremos obtener acceso a diferentes funcionalidades como</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Eliminar Usuarios</em></p></li>
+<li><p><em>Modificar Usuarios</em></p></li>
+</ul>
+</div></blockquote>
+<p>Es decir, casi que tendremos un manejo básico de la Base de Datos, a través de una Interfaz.</p>
+<div class="section" id="base-de-datos">
+<h3>Base de Datos<a class="headerlink" href="#base-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como Base de Datos, hemos empleado sqlite3. <a class="reference external" href="https://docs.python.org/es/3.10/library/sqlite3.html">SQLite</a> , es una biblioteca de
+C que provee una base de datos ligera basada en disco que no requiere un proceso de servidor separado y permite acceder
+a la base de datos usando una variación no estándar del lenguaje de consulta SQL. Esta se convierte en una Base de Datos
+perfecta para proyectos pequeños como este.</p>
+<p>Para realizar una modificación en la Base de Datos, iremos al archivo <strong>runsql.py</strong>. Aqui encontraremos
+este código:</p>
+<div class="highlight-PYTHON notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="k">def</span> <span class="nf">databasecreate</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creando la base de datos&quot;</span><span class="p">);</span>
+
+    <span class="c1"># TABLA DE USUARIOS</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;bottle.db&#39;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE usuarios (nombre char(50) PRIMARY KEY NOT NULL, dni char(10) NOT NULL, pass char(20) NOT NULL, correo char(60) NOT NULL, departamento char(100), categoria char(5))&quot;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO usuarios (nombre, dni, correo, departamento, categoria, pass) VALUES (&#39;admin&#39;,&#39;admin&#39;,&#39;admin@uca.es&#39;,&#39;Administracion&#39;,&#39;ADM&#39;, &#39;admin&#39;) &quot;</span><span class="p">)</span>
+
+    <span class="c1"># TABLA DE ASIGNATURAS</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE asignatura (id INTEGER PRIMARY KEY, nombre char(100))&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+        <span class="n">consulta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Introduce una asignatura (n) para cancelar: &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">consulta</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO asignatura (nombre) VALUES (&#39;</span><span class="si">{}</span><span class="s2">&#39;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">consulta</span><span class="p">)</span>
+            <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="c1"># TABLA DE PROF_ASIG</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE prof_asig (profesor char(50), asignatura char(100), foreign key(profesor) references usuarios(nombre) );&quot;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Base de datos creada&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">databasecreate</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Atención</dt>
+<dd class="field-odd"><p><strong>No cambiar el esquema de las tablas, solo la información en ellas.</strong></p>
+</dd>
+</dl>
+<p>Para cambiar la información de las tablas, simplemente sustituiremos las columnas de correo y contraseña del admin, dejando
+el nombre <strong>admin</strong> tal y como está. Así pues podremos tener un usuario admin, con nuestro correo y contraseña personalizado.</p>
+</div>
 </div>
 </div>
 
