@@ -1,6 +1,13 @@
 BottlePy - Sistemas Distribuidos - Practica 3
 =============================================
 
+.. image:: bottlelogo.png
+      :align: center
+      :alt: BottlePy
+      :height: 500
+      :width: 500 
+
+
 En esta práctica vamos a trabajar con el framework Bottle visto en el Seminario 3. 
 La idea es crear un servicio web de directorio similar al `Directorio de la Universidad de Cádiz <https://directorio.uca.es/cau/directorio.do>`_.
 
