@@ -84,6 +84,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/autores.html">Autores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentos/ejecucion.html">Ejecución</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/codigo.html">Documentación del Código</a></li>
 </ul>
 
@@ -265,7 +266,9 @@
         <span class="k">if</span> <span class="p">(</span><span class="n">asignatura</span> <span class="o">!=</span> <span class="s1">&#39;1&#39;</span><span class="p">):</span>
             
             <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;select nombre,categoria,departamento,correo FROM usuarios where nombre IN (select profesor from prof_asig where asignatura=&#39;</span><span class="si">{}</span><span class="s2">&#39;);&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">asignatura</span><span class="p">)</span>
-
+           
+           <span class="c1"># INTENTAR DE ESTE MODO</span>
+           <span class="c1"># query = &quot;select asignatura FROM prof_asig where profesor IN (select nombre,categoria,departamento,correo FROM usuarios)&quot;</span>
         <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
 
@@ -673,6 +676,7 @@
         <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;bottle.db&#39;</span><span class="p">)</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
+        <span class="c1"># BORRAR TAMBIEN PROF_ASIG</span>
         <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;DELETE from usuarios where nombre=&#39;</span><span class="si">{}</span><span class="s2">&#39;;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
         

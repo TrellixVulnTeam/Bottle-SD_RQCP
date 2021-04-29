@@ -46,6 +46,7 @@ El servicio web deberá contar, al menos, con los siguientes **endpoints**:
 
    documentos/instalacion
    documentos/autores
+   documentos/ejecucion
    documentos/codigo
    
    

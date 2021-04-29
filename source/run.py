@@ -114,7 +114,9 @@ def search_done():
         if (asignatura != '1'):
             
             query = "select nombre,categoria,departamento,correo FROM usuarios where nombre IN (select profesor from prof_asig where asignatura='{}');".format(asignatura)
-
+           
+           # INTENTAR DE ESTE MODO
+           # query = "select asignatura FROM prof_asig where profesor IN (select nombre,categoria,departamento,correo FROM usuarios)"
         c.execute(query)
         result = c.fetchall()
 
@@ -522,6 +524,7 @@ def eliminate_done():
         conn = sqlite3.connect('bottle.db')
         c = conn.cursor()
 
+        # BORRAR TAMBIEN PROF_ASIG
         query = "DELETE from usuarios where nombre='{}';".format(name)
 
         

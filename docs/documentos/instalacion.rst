@@ -179,7 +179,7 @@ este código:
         databasecreate()
 
 
-:Atención: **No cambiar el esquema de las tablas, solo la información en ellas.**
+.. warning:: **No cambiar el esquema de las tablas, solo la información en ellas.**
 
 Para cambiar la información de las tablas, simplemente sustituiremos las columnas de correo y contraseña del admin, dejando 
 el nombre **admin** tal y como está. Así pues podremos tener un usuario admin, con nuestro correo y contraseña personalizado.
