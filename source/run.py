@@ -30,7 +30,7 @@ def index():
 
         
         query = "SELECT nombre FROM asignatura WHERE 1=1;"
-        print('\n'+query+'\n')
+        
         
         c.execute(query)
         result = c.fetchall()
@@ -106,8 +106,9 @@ def search_done():
         if (departamento != '1'):
             query = query + " and departamento = '{}' ".format(departamento)
         
+        
         query = query + " except SELECT nombre,categoria,departamento,correo from usuarios WHERE nombre='admin';"
-        print('\n'+query+'\n')
+        
 
 
         if (asignatura != '1'):
@@ -190,7 +191,7 @@ def do_login():
 
         if (correo != 'None' and password != ''):
             query = "SELECT nombre,correo,pass FROM usuarios WHERE 1=1 and correo='{}' and pass = '{}';".format(correo,password)
-            print('\n'+query+'\n')
+            
         
         else:
             return template('login', count = 0, error = 'Error al introducir los datos')
@@ -286,10 +287,8 @@ def do_register():
         conn = sqlite3.connect('bottle.db')
         c = conn.cursor()
 
-        print(name)
-        print(correo)
-        print(dni)
-        print(departamento)
+
+        print(asignatura)
 
         if ((name != '' and name != 'admin' and name != None) and dni != '' and correo != '' and password != '' and categoria != '1' and departamento != '1'):
 
@@ -310,14 +309,12 @@ def do_register():
                 return template('register', count = 1, error = '')
         
         else:
-            print(USER_NAME[0])
-            if asignatura != None:
+            if asignatura:
                 for i in asignatura:
-                    print("marca de base de datos")
                     command = "INSERT INTO prof_asig (profesor,asignatura) VALUES ('{}','{}')".format(USER_NAME[0], i)
                     c.execute(command)
                     conn.commit()
-                return template("register", count = 1, error='')
+                return template('register', count = 1, error='')
 
             else:
                 return template('register', count = 0 , error = 'Falta algun campo')
@@ -365,7 +362,7 @@ def modify():
         
         query = "SELECT nombre,dni FROM usuarios WHERE 1=1;"
 
-        print('\n'+query+'\n')
+        
         
         c.execute(query)
         result = c.fetchall()
@@ -476,7 +473,7 @@ def eliminate():
         
         query = "SELECT nombre FROM usuarios WHERE 1=1;"
 
-        print('\n'+query+'\n')
+        
         
         c.execute(query)
         result = c.fetchall()
@@ -527,7 +524,7 @@ def eliminate_done():
 
         query = "DELETE from usuarios where nombre='{}';".format(name)
 
-        print('\n'+query+'\n')
+        
 
         c.execute(query)
         conn.commit()
