@@ -46,7 +46,12 @@ def index():
             conn.close()
             print("Conexion Cerrada")
 
-    return template('index', count = 0, admin = 0, user = USER_INFO , asignatura = result)
+    if USER_INFO[0] == 'admin':
+        admin = 1
+    else:
+        admin = 0
+
+    return template('index', count = 0, admin = admin, user = USER_INFO , asignatura = result)
 
 
 @route('/search_done', method='POST')

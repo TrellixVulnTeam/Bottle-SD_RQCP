@@ -83,3 +83,5 @@ html_static_path = ['_static']
 latex_documents = [
  ('index', 'yourdoc.tex', u'DocName', u'YourName', 'manual'),
 ]
+
+pygments_style = 'sphinx'
