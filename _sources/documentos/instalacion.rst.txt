@@ -89,9 +89,9 @@ de paquetes Python instalados en sus directorios de ubicación.
 
 .. code-block:: BASH
 
-    # python3 venv carpeta_destino
+    # python3 -m venv carpeta_destino
     
-    $ python3 venv mientorno
+    $ python3 -m venv mientorno
 
 Una vez se ha creado el entorno virtual, debemos entrar en dicho entorno.
 
