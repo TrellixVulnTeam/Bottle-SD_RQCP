@@ -13,10 +13,10 @@
     - [x] Consultar Miembros Categoria (POST)
     - [x] Buscar por DNI (POST)
 
-- [ ] MEJORAS
-    - [ ] Endpoints
+- [x] MEJORAS
+    - [x] Endpoints
         - [x] eliminar_miembro
-        - [x] busqueda_parcial_nombre
-        - [x] busqueda_paramterica
-        - [ ] busqueda_inversa_asignaturas
+        - [x] Busqueda Parcial Nombre
+        - [x] Busqueda Paramterica
+        - [x] Busqueda Inversa Asignaturas
         - [x] Verificacion de datos correctos en el registro.
